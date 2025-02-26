@@ -15,7 +15,9 @@ function Detail() {
     const param = useParams();
 
     const fetchPost = async () => {
-        const response = await apiInstance.get(`post/detail/${param.slug}/`);
+        console.log("Fetching post with slug:", param.slug);
+        const response = await apiInstance.get(`post/details/${param.slug}/`);
+        console.log("________________", response)
         setPost(response.data);
 
         const tagArray = response.data?.tags?.split(",");

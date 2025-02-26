@@ -12,6 +12,7 @@ function Category() {
 
     const fetchPosts = async () => {
         const response = await apiInstance.get(`post/category/posts/${param.slug}/`);
+        console.log("---------------------",response)
         setPosts(response.data);
     };
     useEffect(() => {
